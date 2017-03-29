@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<declare-styleable name="MathView">
+    <attr name="setViewBackgroundColor" format="color" />
+    <attr name="setText" format="string" />
+    <attr name="setTextColor" format="color" />
+    <attr name="setTextSize" format="dimension" />
+</declare-styleable>
+</resources>
