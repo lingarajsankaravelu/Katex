@@ -6,6 +6,7 @@ import android.content.res.TypedArray;
 import android.support.v4.content.ContextCompat;
 import android.util.AttributeSet;
 import android.util.Log;
+import android.view.MotionEvent;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 
@@ -20,6 +21,7 @@ public class MathView extends WebView {
     private String display_text;
     private int text_color;
     private int text_size;
+    private boolean clickable = false;
     
      
 
@@ -44,6 +46,7 @@ public class MathView extends WebView {
             setTextColor(mTypeArray.getColor(R.styleable.MathView_setTextColor,ContextCompat.getColor(context,android.R.color.black)));
             pixelSizeConversion(mTypeArray.getDimension(R.styleable.MathView_setTextSize,default_text_size));
             setDisplayText(mTypeArray.getString(R.styleable.MathView_setText));
+            setClickable(mTypeArray.getBoolean(R.styleable.MathView_setClickable,false));
 
 
         }
@@ -120,7 +123,12 @@ public class MathView extends WebView {
                 "        </script>\n" +
                 "    </body>\n" +
                 "</html>";
-        return   offline_config.replace("{formula}",this.display_text);
+        String start = "<html><head><meta http-equiv='Content-Type' content='text/html' charset='UTF-8' /><style> body {"+
+       " white-space: nowrap;}</style></head><body>";
+
+    String end = "</body></html>";
+        //return   start+offline_config.replace("{formula}",this.display_text)+end;
+        return offline_config.replace("{formula}",this.display_text);
 
 
     }
@@ -162,6 +170,25 @@ public class MathView extends WebView {
         if (this.display_text!=null)
         {
             this.loadDataWithBaseURL("null",getOfflineKatexConfig(),"text/html","UTF-8","about:blank");
+        }
+
+    }
+
+    public void setClickable(boolean is_clickable)
+    {
+        this.clickable = is_clickable;
+        this.invalidate();
+    }
+
+    @Override
+    public boolean onTouchEvent(MotionEvent event) {
+        if(clickable)
+        {
+            return false;
+        }
+        else
+        {
+            return true;
         }
 
     }
