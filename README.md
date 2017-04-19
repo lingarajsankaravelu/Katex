@@ -1,4 +1,7 @@
 # Katex
+[![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-KatexMathView-brightgreen.svg?style=flat)](https://android-arsenal.com/details/1/5577)
+
+
   A [KhanAcademy Katex](https://khan.github.io/KaTeX/) based Library for Rendering math faster in various Android Devices.
   This a View which is created from extending webview. This view allows you to render latex in your android devices. It can load
   normal text, text with latex and latex alone. The only thing you have to make sure is your latex should be enclosed inside
