@@ -1,3 +1,18 @@
 <resources>
-    <string name="app_name">Katex</string>
+    <string name="app_name">KatexTuts</string>
+    <array name="formulas">
+        <item>$=\\frac{40}{100}\\times9000$</item>
+        <item>$x:35::48:60$</item>
+        <item>$x=\\frac{1+y}{1+2z^2}$</item>
+        <item>$$x=\\frac{1+y}{1+2z^2}$$</item>
+        <item>$\\int_0^\\infty e^{-x^2} dx=\\frac{\\sqrt{\\pi}}{2}$</item>
+        <item>$$\int_0^\\infty e^{-x^2} dx=\\frac{\\sqrt{\\pi}}{2}$$</item>
+        <item>$\\displaystyle \\int_0^\\infty e^{-x^2} dx$</item>
+        <item>$\\sqrt{2} \\sin x$</item>
+        <item>$\\int \\!\\! \\int f(x,y)\\,\\mathrm{d}x\\mathrm{d}y$</item>
+        <item>$${n+1\\choose k} = {n\\choose k} + {n \\choose k-1}
+            $$</item>
+    </array>
+    <string name="single_formula">$\\int_0^\\infty e^{-x^2} dx=\\frac{\\sqrt{\\pi}}{2}$</string>
+    <string name="runtime_formula">$${n+1\\choose k} = {n\\choose k} + {n \\choose k-1}$$</string>
 </resources>
