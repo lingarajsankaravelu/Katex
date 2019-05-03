@@ -7,9 +7,11 @@ import android.support.v4.content.ContextCompat;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.MotionEvent;
+import android.view.View;
+import android.webkit.WebChromeClient;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
-
+import android.webkit.WebViewClient;
 
 /**
  * Created by lingaraj on 3/15/17.
@@ -81,15 +83,16 @@ public class MathView extends WebView {
   @SuppressLint({"SetJavaScriptEnabled", "NewApi"})
   private void configurationSettingWebView(boolean enable_zoom_in_controls)
   {
-    getSettings().setJavaScriptEnabled(true);
-    getSettings().setAllowFileAccess(true);
-    Log.d(TAG,"Zoom in controls:"+enable_zoom_in_controls);
-    getSettings().setDisplayZoomControls(enable_zoom_in_controls);
-    getSettings().setBuiltInZoomControls(enable_zoom_in_controls);
-    getSettings().setSupportZoom(enable_zoom_in_controls);
+    this.setLayerType(View.LAYER_TYPE_HARDWARE,null);
+    WebSettings settings = this.getSettings();
+    settings.setJavaScriptEnabled(true);
+    settings.setAllowFileAccess(true);
+    settings.setDisplayZoomControls(enable_zoom_in_controls);
+    settings.setBuiltInZoomControls(enable_zoom_in_controls);
+    settings.setSupportZoom(enable_zoom_in_controls);
     this.setVerticalScrollBarEnabled(enable_zoom_in_controls);
     this.setHorizontalScrollBarEnabled(enable_zoom_in_controls);
-    getSettings().setCacheMode(WebSettings.LOAD_NO_CACHE);
+    Log.d(TAG,"Zoom in controls:"+enable_zoom_in_controls);
   }
 
 
