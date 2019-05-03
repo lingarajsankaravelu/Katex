@@ -2,7 +2,6 @@ package hourglass.github.in.katex;
 
 import android.content.Context;
 import android.util.Log;
-import hourglass.github.in.katex.activities.MathViewListActivity;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;

@@ -132,7 +132,6 @@ public class MathView extends WebView {
         " white-space: nowrap;}</style></head><body>";
 
     String end = "</body></html>";
-    //return   start+offline_config.replace("{formula}",this.display_text)+end;
     return offline_config.replace("{formula}",this.display_text);
 
 
@@ -195,21 +194,4 @@ public class MathView extends WebView {
     }
     return false;
     }
-
-
-  /*
-    @Override
-    public boolean onTouchEvent(MotionEvent event) {
-        if(this.clickable)
-        {
-            return false;
-        }
-        else
-        {
-            return true;
-
-        }
-
-    } */
-
 }
