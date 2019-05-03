@@ -10,12 +10,42 @@ public class MainActivity extends AppCompatActivity {
     private String math_formula = "${\rm{Mn}}{{\rm{O}}_{\rm{2}}}$";
     private String question = "This formula $f(x) = x^2$ is an example.";
     private final String question_with_html_tags = getHtmlQuestionText();
+    private final String normal_html_data = "<p>\n"
+        + "    As Xenophanes recognized as long ago as the sixth century before Christ,\n"
+        + "    whether or not God made man in His own image, it is certain that man makes\n"
+        + "    gods in his. The gods of Greek mythology first appear in the writings of\n"
+        + "    Homer and Hesiod, and, from the character and actions of these picturesque\n"
+        + "    and, for the most part, friendly beings, we get some idea of the men who\n"
+        + "    made them and brought them to Greece.\n"
+        + "</p>\n"
+        + "<p>\n"
+        + "    But ritual is more fundamental than mythology, and the study of Greek\n"
+        + "    ritual during recent years has shown that, beneath the belief or skepticism\n"
+        + "    with which the Olympians were regarded, lay an older magic, with\n"
+        + "    traditional rites for the promotion of fertility by the celebration of the\n"
+        + "    annual cycle of life and death, and the propitiation of unfriendly ghosts,\n"
+        + "    gods or demons. Against this dark and dangerous background arose Olympic\n"
+        + "    mythology on the one hand and early philosophy and science on the other.\n"
+        + "</p>\n"
+        + "<p>\n"
+        + "    In classical times the need of a creed higher than the Olympian was felt,\n"
+        + "    and Aeschylus, Sophocles and Plato finally evolved from the pleasant but\n"
+        + "    crude polytheism the idea of a single, supreme and righteous Zeus. But the\n"
+        + "    decay of Olympus led to a revival of old and the invasion of new magic\n"
+        + "    cults among the people, while some philosophers were looking to a vision of\n"
+        + "    the uniformity of nature under divine and universal law.\n"
+        + "</p>\n"
+        + "<p>\n"
+        + "    From Sir William Cecil Dampier, <em>A Shorter History of Science</em>,\n"
+        + "    ©1957, Meridian Books.\n"
+        + "</p>";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         mathView = (MathView) findViewById(R.id.math_view);
-        mathView.setDisplayText(question_with_html_tags);
+        mathView.setDisplayText(normal_html_data);
     }
 
     private String getHtmlQuestionText(){

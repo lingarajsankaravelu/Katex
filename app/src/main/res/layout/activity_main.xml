@@ -10,9 +10,9 @@
     <katex.hourglass.in.mathlib.MathView
         android:id="@+id/math_view"
         app:setClickable="false"
-        app:setTextColor="@color/colorAccent"
+        app:setTextColor="@android:color/holo_green_dark"
         app:setViewBackgroundColor="@android:color/white"
         android:layout_width="match_parent"
-        android:layout_height="120dp">
+        android:layout_height="wrap_content">
     </katex.hourglass.in.mathlib.MathView>
 </FrameLayout>
