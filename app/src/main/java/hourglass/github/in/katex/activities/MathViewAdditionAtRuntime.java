@@ -31,10 +31,10 @@ public class MathViewAdditionAtRuntime extends AppCompatActivity {
 
     private void addMathView() {
         MathView mathView = new MathView(getApplicationContext());
-        mathView.setClickable(true);
+        mathView.setClickable(false);
         mathView.setTextSize(14);
         mathView.setTextColor(ContextCompat.getColor(getApplicationContext(),android.R.color.white));
-        mathView.setDisplayText(DataHelpers.getMathQuestionWithHtmlTags());
+        mathView.setDisplayText(DataHelpers.getScrollableData());
        // mathView.setDisplayText(getResources().getString(R.string.runtime_formula));
        // mathView.setViewBackgroundColor(ContextCompat.getColor(getApplicationContext(),R.color.Color5));
         mathView.setViewBackgroundColor(Helpers.getRandomColor(getApplicationContext(),2));

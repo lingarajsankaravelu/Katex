@@ -183,16 +183,20 @@ public class MathView extends WebView {
   {
     this.setEnabled(true);
     this.clickable = is_clickable;
-    this.enable_zoom_in_controls = is_clickable;
-    configurationSettingWebView(is_clickable);
+    this.enable_zoom_in_controls = !is_clickable;
+    configurationSettingWebView(this.enable_zoom_in_controls);
     this.invalidate();
   }
 
   @SuppressLint("NewApi")
   @Override public boolean onTouchEvent(MotionEvent event) {
-    if (this.clickable && event.getAction()== MotionEvent.ACTION_DOWN){
-       this.callOnClick();
+    if (this.clickable && event.getAction() == MotionEvent.ACTION_DOWN) {
+      this.callOnClick();
+      return false;
     }
-    return false;
+    else {
+      return super.onTouchEvent(event);
     }
+  }
+
 }
