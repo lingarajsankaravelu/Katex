@@ -74,12 +74,6 @@ or
    ![demo_katex_list_200](https://cloud.githubusercontent.com/assets/8025146/24969740/628856d2-1fcf-11e7-9daf-01e7fd5452db.gif) ![demo_katex_layout_200](https://cloud.githubusercontent.com/assets/8025146/24969771/825f161c-1fcf-11e7-8955-945a363404b0.gif) ![demo_katex_runtime_200](https://cloud.githubusercontent.com/assets/8025146/24969808/a3a42e3e-1fcf-11e7-83b5-beb802b700e8.gif)
 
 Sample code is available under the app module, in this same repo
-
-##### Find this project useful? Send me a cup of coffee!
-
-  * <a href="https://www.paypal.me/Lingarajs/5" target="_blank"><img src="https://www.paypalobjects.com/webstatic/en_US/i/buttons/PP_logo_h_200x51.png" alt="PayPal.me/Lingarajs" style="width: 30px;"></a>
-
----
   
 # License
 
