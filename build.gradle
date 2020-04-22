@@ -6,7 +6,11 @@ buildscript {
         google()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.3.1'
+        classpath 'com.android.tools.build:gradle:3.6.3'
+      /*Bintray release config
+      classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.4'
+        classpath 'com.github.dcendents:android-maven-gradle-plugin:1.4.1'
+       */
 
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
@@ -23,8 +27,8 @@ allprojects {
     minSdkVersion=14 //Integer
     targetSdkVersion=28
     compileSdkVersion=28
-    versionCode=3
-    versionName="1.0.2"
+    versionCode=4
+    versionName="1.0.3"
     supportLibrary="28.0.0"
   }
 }
