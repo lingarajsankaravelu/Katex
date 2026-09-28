@@ -57,14 +57,6 @@ jobs:
             echo "EOF"
           } >> "$GITHUB_ENV"
 
-      - name: Tag release
-        run: |
-          set -euo pipefail
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git tag -a "v_$NEW_VERSION" -m "$CHANGELOG"
-          git push origin "v_$NEW_VERSION"
-
       - name: Set up JDK 17
         uses: actions/setup-java@v4
         with:
@@ -85,7 +77,7 @@ jobs:
           ORG_GRADLE_PROJECT_signingInMemoryKeyPassword: ${{ secrets.GPG_KEY_PASSWORD }}
         run: ./gradlew :katexmathview:publishAndReleaseToMavenCentral --no-configuration-cache --console=plain --stacktrace
 
-      - name: Create GitHub Release
+      - name: Tag and create GitHub Release
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
@@ -93,4 +85,5 @@ jobs:
           echo "$CHANGELOG" > /tmp/release-notes.md
           gh release create "v_$NEW_VERSION" \
             --title "v_$NEW_VERSION" \
-            --notes-file /tmp/release-notes.md
+            --notes-file /tmp/release-notes.md \
+            --target "${{ github.sha }}"
