@@ -1,6 +1,5 @@
 
-[![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-KatexMathView-yellow.svg?style=flat)](https://android-arsenal.com/details/1/5577)
-![Stable](https://img.shields.io/badge/version-1.0.5-brightgreen.svg?style=flat)
+[![CI](https://github.com/lingarajsankaravelu/Katex/actions/workflows/build.yml/badge.svg)](https://github.com/lingarajsankaravelu/Katex/actions/workflows/build.yml)
 [![Maven Central](https://img.shields.io/maven-central/v/io.github.lingarajsankaravelu/katexmathview.svg?label=Maven%20Central)](https://central.sonatype.com/artifact/io.github.lingarajsankaravelu/katexmathview)
 
   A [KhanAcademy Katex](https://khan.github.io/KaTeX/) based Library for Rendering math faster in various Android Devices.
@@ -30,7 +29,7 @@ or
 
 ### Setup
 
-Published on Maven Central — no extra repository needed, just add the dependency:
+Published on Maven Central
 
     dependencies {
       implementation 'io.github.lingarajsankaravelu:katexmathview:1.0.5'

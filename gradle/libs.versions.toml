@@ -14,6 +14,7 @@ androidxCore = "1.1.0"
 junit = "4.13.2"
 espressoCore = "3.5.1"
 androidxTestExtJunit = "1.1.5"
+robolectric = "4.13"
 
 [libraries]
 androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
@@ -23,4 +24,6 @@ material = { group = "com.google.android.material", name = "material", version.r
 androidx-core = { group = "androidx.core", name = "core", version.ref = "androidxCore" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 androidx-test-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
+androidx-test-espresso-web = { group = "androidx.test.espresso", name = "espresso-web", version.ref = "espressoCore" }
 androidx-test-ext-junit = { group = "androidx.test.ext", name = "junit", version.ref = "androidxTestExtJunit" }
+robolectric = { group = "org.robolectric", name = "robolectric", version.ref = "robolectric" }

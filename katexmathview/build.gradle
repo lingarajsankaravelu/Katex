@@ -29,6 +29,11 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+    testOptions {
+        unitTests {
+            includeAndroidResources = true
+        }
+    }
     // kotlinOptions {} is gone under AGP's built-in Kotlin support; jvmTarget now infers
     // from compileOptions.targetCompatibility above (1.8), so no replacement block is needed.
 }
@@ -36,10 +41,12 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     androidTestImplementation libs.androidx.test.espresso.core
+    androidTestImplementation libs.androidx.test.espresso.web
     androidTestImplementation libs.androidx.test.ext.junit
     implementation libs.androidx.appcompat
     implementation libs.androidx.core
     testImplementation libs.junit
+    testImplementation libs.robolectric
 }
 
 mavenPublishing {
