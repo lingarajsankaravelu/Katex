@@ -1,74 +1,12 @@
+plugins {
+    id 'com.vanniktech.maven.publish' version '0.33.0'
+}
+
+import com.vanniktech.maven.publish.AndroidSingleVariantLibrary
+
 apply plugin: 'com.android.library'
 // AGP 9.0+ auto-applies Kotlin support ("built-in Kotlin"); an explicit kotlin-android
 // apply now conflicts with it (duplicate 'kotlin' extension registration).
-
-/*Bintray release config
-apply plugin: 'com.jfrog.bintray'
-apply plugin: 'com.github.dcendents.android-maven'   //Apply maven plugin
-apply plugin: 'maven-publish'
-*/
-
-/*Bintray release config
-ext {
-    bintrayRepo = 'KatexMathView' //The repository name in bintray dashboard
-    bintrayName = 'KatexMathView' //The package name of the Bintray Repository
-    libraryName = 'katexmathview' //The library module name in your Android Studio project
-    //Artifact information
-    // For example implementation 'in.hourglass.mathrender:katexmathview:1.0'
-    publishedGroupId = 'in.hourglass.mathrender'  //The id you want to add in 'implementation' line
-    artifact = 'katexmathview'      //The artifact you want to add in
-    libraryVersion = '1.0.3'
-
-    libraryDescription = 'A Custom webview to render Math formulas using katex'
-    siteUrl= 'https://github.com/lingarajsankaravelu/Katex'
-    gitUrl='https://github.com/lingarajsankaravelu/Katex.git'
-    developerId = '****'
-    developerName = '****'
-    developerEmail = '****'
-    licenseName= 'The Apache Software License, Version 2.0'
-    licenseUrl ='http://www.apache.org/licenses/LICENSE-2.0.txt'
-    allLicenses = ["Apache-2.0"]
-}
-
-def pomConfig = {
-    licenses {
-        license {
-            name "The Apache Software License, Version 2.0"
-            url "http://www.apache.org/licenses/LICENSE-2.0.txt"
-            distribution "repo"
-        }
-    }
-    developers {
-        developer {
-            id "****"
-            name "S Lingaraj"
-            email "****"
-        }
-    }
-
-    scm {
-        url "https://github.com/lingarajsankaravelu/Katex"
-    }
-}
-
-publishing {
-    publications {
-        mavenPublication(MavenPublication) {
-            groupId 'in.hourglass.mathrender'
-            artifactId 'katexmathview'
-            version '1.0.3'
-            pom.withXml {
-                def root = asNode()
-                root.appendNode('description', 'A Custom webview to render Math formulas using katex')
-                root.appendNode('name', 'katexmathview')
-                root.appendNode('url', 'https://github.com/lingarajsankaravelu/Katex')
-                root.children().last() + pomConfig
-            }
-        }
-    }
-}
- */
-
 
 android {
     namespace = "katex.hourglass.in.mathlib"
@@ -104,10 +42,38 @@ dependencies {
     testImplementation libs.junit
 }
 
-/*Bintray Release config
-if (project.rootProject.file('local.properties').exists()){
-    apply from: 'https://raw.githubusercontent.com/nuuneoi/JCenter/master/installv1.gradle'
-    apply from: 'https://raw.githubusercontent.com/nuuneoi/JCenter/master/bintrayv1.gradle'
+mavenPublishing {
+    configure(new AndroidSingleVariantLibrary("release", true, true))
 
-}*/
+    coordinates("io.github.lingarajsankaravelu", "katexmathview", libs.versions.libraryVersionName.get())
+
+    pom {
+        name = "KatexMathView"
+        description = "A custom WebView to render math formulas using KaTeX"
+        inceptionYear = "2019"
+        url = "https://github.com/lingarajsankaravelu/Katex"
+        licenses {
+            license {
+                name = "The Apache License, Version 2.0"
+                url = "http://www.apache.org/licenses/LICENSE-2.0.txt"
+                distribution = "http://www.apache.org/licenses/LICENSE-2.0.txt"
+            }
+        }
+        developers {
+            developer {
+                id = "lingarajsankaravelu"
+                name = "S Lingaraj"
+                url = "https://github.com/lingarajsankaravelu"
+            }
+        }
+        scm {
+            url = "https://github.com/lingarajsankaravelu/Katex"
+            connection = "scm:git:git://github.com/lingarajsankaravelu/Katex.git"
+            developerConnection = "scm:git:ssh://git@github.com/lingarajsankaravelu/Katex.git"
+        }
+    }
+
+    publishToMavenCentral()
+    signAllPublications()
+}
 
