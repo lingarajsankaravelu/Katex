@@ -2,11 +2,12 @@
 //info- using KhanAcadamey katex release version - v_0.10.1
 buildscript {
     repositories {
-        jcenter()
+        mavenCentral()
         google()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.6.3'
+        classpath 'com.android.tools.build:gradle:9.4.1'
+        classpath 'org.jetbrains.kotlin:kotlin-gradle-plugin:1.9.24'
       /*Bintray release config
       classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.4'
         classpath 'com.github.dcendents:android-maven-gradle-plugin:1.4.1'
@@ -19,18 +20,9 @@ buildscript {
 
 allprojects {
     repositories {
-        jcenter()
+        mavenCentral()
         google()
     }
-  project.ext {
-    buildToolsVersion="28.0.3" //String
-    minSdkVersion=14 //Integer
-    targetSdkVersion=28
-    compileSdkVersion=28
-    versionCode=4
-    versionName="1.0.3"
-    supportLibrary="28.0.0"
-  }
 }
 
 task clean(type: Delete) {
