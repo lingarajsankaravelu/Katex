@@ -1,5 +1,6 @@
 apply plugin: 'com.android.library'
-apply plugin: 'kotlin-android'
+// AGP 9.0+ auto-applies Kotlin support ("built-in Kotlin"); an explicit kotlin-android
+// apply now conflicts with it (duplicate 'kotlin' extension registration).
 
 /*Bintray release config
 apply plugin: 'com.jfrog.bintray'
@@ -70,7 +71,7 @@ publishing {
 
 
 android {
-    namespace "katex.hourglass.in.mathlib"
+    namespace = "katex.hourglass.in.mathlib"
     compileSdkVersion libs.versions.compileSdk.get().toInteger()
     defaultConfig {
         minSdkVersion libs.versions.minSdk.get().toInteger()
@@ -90,9 +91,8 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
-    kotlinOptions {
-        jvmTarget = "1.8"
-    }
+    // kotlinOptions {} is gone under AGP's built-in Kotlin support; jvmTarget now infers
+    // from compileOptions.targetCompatibility above (1.8), so no replacement block is needed.
 }
 
 dependencies {

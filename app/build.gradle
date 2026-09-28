@@ -1,8 +1,9 @@
 apply plugin: 'com.android.application'
-apply plugin: 'kotlin-android'
+// AGP 9.0+ auto-applies Kotlin support ("built-in Kotlin"); an explicit kotlin-android
+// apply now conflicts with it (duplicate 'kotlin' extension registration).
 
 android {
-    namespace "hourglass.github.in.katex"
+    namespace = "hourglass.github.in.katex"
     compileSdkVersion libs.versions.compileSdk.get().toInteger()
     defaultConfig {
         applicationId "hourglass.github.in.katex"
@@ -22,9 +23,8 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
-    kotlinOptions {
-        jvmTarget = "1.8"
-    }
+    // kotlinOptions {} is gone under AGP's built-in Kotlin support; jvmTarget now infers
+    // from compileOptions.targetCompatibility above (1.8), so no replacement block is needed.
 }
 
 dependencies {
