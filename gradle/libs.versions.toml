@@ -1,4 +1,5 @@
 [versions]
+kotlin = "1.8.22"
 compileSdk = "34"
 minSdk = "23"
 targetSdk = "34"
