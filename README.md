@@ -29,7 +29,7 @@ or
 
 ### Setup
 
-Published on Maven Central
+Published on Maven Central — no extra repository needed, just add the dependency:
 
     dependencies {
       implementation 'io.github.lingarajsankaravelu:katexmathview:1.0.5'
