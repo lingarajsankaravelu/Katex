@@ -31,7 +31,7 @@ jobs:
           fi
 
           if git rev-parse "v_$NEW_VERSION" >/dev/null 2>&1; then
-            echo "::error::Tag v_$NEW_VERSION already exists — gradle/libs.versions.toml's libraryVersionName ($NEW_VERSION) hasn't been bumped since the last release. Bump libraryVersionName (and libraryVersionCode) on master before running this workflow."
+            echo "::error::Tag v_$NEW_VERSION already exists — gradle/libs.versions.toml's libraryVersionName ($NEW_VERSION) hasn't been bumped since the last release. Bump libraryVersionName on master before running this workflow."
             exit 1
           fi
 
