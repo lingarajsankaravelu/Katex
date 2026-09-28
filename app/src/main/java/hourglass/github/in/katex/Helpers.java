@@ -1,7 +1,7 @@
 package hourglass.github.in.katex;
 
 import android.content.Context;
-import android.support.v4.content.ContextCompat;
+import androidx.core.content.ContextCompat;
 
 /**
  * Created by lingaraj on 4/4/17.
