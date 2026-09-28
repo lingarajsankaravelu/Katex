@@ -12,11 +12,11 @@ import android.webkit.WebSettings;
 import android.webkit.WebView;
 
 /**
- * Created by lingaraj on 3/15/17.
+ * Created by Lingaraj on 3/15/17.
  */
 
 public class MathView extends WebView {
-  private String TAG = "KhanAcademyKatexView";
+  private static final String TAG = "KhanAcademyKatexView";
   private static final float default_text_size = 18;
   private String display_text;
   private int text_color;
@@ -39,6 +39,7 @@ public class MathView extends WebView {
   public MathView(Context context, AttributeSet attrs) {
     super(context, attrs);
     configurationSettingWebView(enable_zoom_in_controls);
+    @SuppressLint("ResourceType")
     TypedArray mTypeArray = context.getTheme().obtainStyledAttributes(
         attrs,
         R.styleable.MathView,
@@ -52,9 +53,15 @@ public class MathView extends WebView {
 
 
     }
-    catch (Exception e)
+    catch (RuntimeException e)
     {
-      Log.d(TAG,"Exception:"+e.toString());
+      Log.w(TAG, "Failed to read MathView styled attributes", e);
+    }
+    finally
+    {
+      // Not try-with-resources: TypedArray only implements AutoCloseable since API 31,
+      // below this view's minSdk 23 — an explicit recycle() avoids a NoSuchMethodError there.
+      mTypeArray.recycle();
     }
 
 
@@ -78,13 +85,12 @@ public class MathView extends WebView {
   }
 
 
-  @SuppressLint({"SetJavaScriptEnabled", "NewApi"})
+  @SuppressLint("SetJavaScriptEnabled")
   private void configurationSettingWebView(boolean enable_zoom_in_controls)
   {
     this.setLayerType(View.LAYER_TYPE_HARDWARE,null);
     WebSettings settings = this.getSettings();
     settings.setJavaScriptEnabled(true);
-    settings.setAllowFileAccess(true);
     settings.setDisplayZoomControls(enable_zoom_in_controls);
     settings.setBuiltInZoomControls(enable_zoom_in_controls);
     settings.setSupportZoom(enable_zoom_in_controls);
@@ -94,6 +100,11 @@ public class MathView extends WebView {
   }
 
 
+  /**
+   * @param formula_text is injected verbatim into the WebView's HTML body (unescaped), so
+   *                      callers must not pass untrusted/remote input here — only
+   *                      app-controlled LaTeX strings.
+   */
   public void setDisplayText(String formula_text) {
     this.display_text = formula_text;
     loadData();
@@ -109,11 +120,11 @@ public class MathView extends WebView {
         "        <title>Auto-render test</title>\n" +
         "        <link rel=\"stylesheet\" type=\"text/css\" href=\"file:///android_asset/katex/katex.min.css\">\n" +
         "        <link rel=\"stylesheet\" type=\"text/css\" href=\"file:///android_asset/themes/style.css\" >\n" +
-        "        <script type=\"text/javascript\" src=\"file:///android_asset/katex/katex.min.js\" ></script>\n" +
-        "        <script type=\"text/javascript\" src=\"file:///android_asset/katex/contrib/auto-render.min.js\" ></script>\n" +
-        "        <script type=\"text/javascript\" src=\"file:///android_asset/katex/contrib/auto-render.js\" ></script>\n" +
-        "        <script type=\"text/javascript\" src=\"file:///android_asset/jquery.min.js\" ></script>\n" +
-        "        <script type=\"text/javascript\" src=\"file:///android_asset/latex_parser.js\" ></script>\n"+
+        "        <script type=\"text/JavaScript\" src=\"file:///android_asset/katex/katex.min.js\" ></script>\n" +
+        "        <script type=\"text/JavaScript\" src=\"file:///android_asset/katex/contrib/auto-render.min.js\" ></script>\n" +
+        "        <script type=\"text/JavaScript\" src=\"file:///android_asset/katex/contrib/auto-render.js\" ></script>\n" +
+        "        <script type=\"text/JavaScript\" src=\"file:///android_asset/jquery.min.js\" ></script>\n" +
+        "        <script type=\"text/JavaScript\" src=\"file:///android_asset/latex_parser.js\" ></script>\n"+
         "        <meta name=\"viewport\" content=\"width=device-width\"/>\n"+
         "<link rel=\"stylesheet\" href=\"file:///android_asset/webviewstyle.css\"/>\n" +
         "<style type='text/css'>"+
@@ -129,10 +140,6 @@ public class MathView extends WebView {
         "        {formula}\n" +
         "    </body>\n" +
         "</html>";
-    String start = "<html><head><meta http-equiv='Content-Type' content='text/html' charset='UTF-8' /><style> body {"+
-        " white-space: nowrap;}</style></head><body>";
-
-    String end = "</body></html>";
     return offline_config.replace("{formula}",this.display_text);
 
 
@@ -152,7 +159,7 @@ public class MathView extends WebView {
   }
   private String getHexColor(int intColor)
   {
-    //Android and javascript color format differ javascript support Hex color, so the android color which user sets is converted to hexcolor to replicate the same in javascript.
+    //Android and JavaScript color format differ JavaScript support Hex color, so the android color which user sets is converted to hexcolor to replicate the same in JavaScript.
     String hexColor = String.format("#%06X", (0xFFFFFF & intColor));
     Log.d(TAG,"Hex Color:"+hexColor);
     return hexColor;
@@ -188,7 +195,7 @@ public class MathView extends WebView {
     this.invalidate();
   }
 
-  @SuppressLint("NewApi")
+  @SuppressLint("ClickableViewAccessibility")
   @Override public boolean onTouchEvent(MotionEvent event) {
     if (this.clickable && event.getAction() == MotionEvent.ACTION_DOWN) {
       this.callOnClick();
