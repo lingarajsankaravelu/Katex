@@ -1,12 +1,7 @@
 name: Release katexmathview to Maven Central
 
 on:
-  workflow_dispatch:
-    inputs:
-      version:
-        description: 'Version to release (e.g. 1.0.4) — must be greater than the currently published version'
-        required: true
-        type: string
+  workflow_dispatch: {}
 
 permissions:
   contents: write
@@ -25,30 +20,22 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Validate version is newer than what's currently published
+      - name: Read version and guard against re-releasing
         run: |
           set -euo pipefail
-          NEW_VERSION="${{ inputs.version }}"
-          CURRENT_VERSION=$(grep -m1 '^libraryVersionName' gradle/libs.versions.toml | sed -E 's/.*"([^"]+)".*/\1/')
+          NEW_VERSION=$(grep -m1 '^libraryVersionName' gradle/libs.versions.toml | sed -E 's/.*"([^"]+)".*/\1/')
 
           if ! [[ "$NEW_VERSION" =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
-            echo "::error::Version '$NEW_VERSION' isn't in x.y.z form."
-            exit 1
-          fi
-
-          HIGHEST=$(printf '%s\n%s\n' "$CURRENT_VERSION" "$NEW_VERSION" | sort -V | tail -1)
-          if [ "$NEW_VERSION" = "$CURRENT_VERSION" ] || [ "$HIGHEST" != "$NEW_VERSION" ]; then
-            echo "::error::Version $NEW_VERSION is not newer than the current version $CURRENT_VERSION (gradle/libs.versions.toml). Publishing the same or an older version would not overwrite what's already on Maven Central — it would just fail, or be silently skipped. Enter a higher version."
+            echo "::error::libraryVersionName '$NEW_VERSION' in gradle/libs.versions.toml isn't in x.y.z form."
             exit 1
           fi
 
           if git rev-parse "v_$NEW_VERSION" >/dev/null 2>&1; then
-            echo "::error::Tag v_$NEW_VERSION already exists."
+            echo "::error::Tag v_$NEW_VERSION already exists — gradle/libs.versions.toml's libraryVersionName ($NEW_VERSION) hasn't been bumped since the last release. Bump libraryVersionName (and libraryVersionCode) on master before running this workflow."
             exit 1
           fi
 
           echo "NEW_VERSION=$NEW_VERSION" >> "$GITHUB_ENV"
-          echo "CURRENT_VERSION=$CURRENT_VERSION" >> "$GITHUB_ENV"
 
       - name: Build changelog since previous release
         run: |
@@ -70,30 +57,12 @@ jobs:
             echo "EOF"
           } >> "$GITHUB_ENV"
 
-      - name: Bump version in gradle/libs.versions.toml
-        run: |
-          set -euo pipefail
-          CURRENT_CODE=$(grep -m1 '^libraryVersionCode' gradle/libs.versions.toml | sed -E 's/.*"([^"]+)".*/\1/')
-          NEW_CODE=$((CURRENT_CODE + 1))
-
-          sed -i "s/^libraryVersionName = \".*\"/libraryVersionName = \"$NEW_VERSION\"/" gradle/libs.versions.toml
-          sed -i "s/^libraryVersionCode = \".*\"/libraryVersionCode = \"$NEW_CODE\"/" gradle/libs.versions.toml
-
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add gradle/libs.versions.toml
-          git commit -m "Release katexmathview $NEW_VERSION"
-
       - name: Tag release
         run: |
           set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
           git tag -a "v_$NEW_VERSION" -m "$CHANGELOG"
-
-      - name: Push commit and tag
-        run: |
-          set -euo pipefail
-          git checkout -B "${GITHUB_REF_NAME}"
-          git push origin "${GITHUB_REF_NAME}"
           git push origin "v_$NEW_VERSION"
 
       - name: Set up JDK 17
