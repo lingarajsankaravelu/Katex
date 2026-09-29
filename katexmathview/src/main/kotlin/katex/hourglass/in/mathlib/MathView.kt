@@ -96,7 +96,6 @@ class MathView : WebView {
               <link rel="stylesheet" type="text/css" href="file:///android_asset/themes/style.css">
               <script type="text/JavaScript" src="file:///android_asset/katex/katex.min.js"></script>
               <script type="text/JavaScript" src="file:///android_asset/katex/contrib/auto-render.min.js"></script>
-              <script type="text/JavaScript" src="file:///android_asset/katex/contrib/auto-render.js"></script>
               <script type="text/JavaScript" src="file:///android_asset/jquery.min.js"></script>
               <script type="text/JavaScript" src="file:///android_asset/latex_parser.js"></script>
               <meta name="viewport" content="width=device-width"/>

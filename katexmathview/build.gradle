@@ -34,6 +34,13 @@ android {
             includeAndroidResources = true
         }
     }
+    androidResources {
+        // src/main/assets/CLAUDE.md is dev-facing documentation for the vendored
+        // KaTeX/jQuery assets, not something that should ship in the published AAR.
+        // Verified by unzipping a built AAR — see that file's "Verifying the exclusion"
+        // section before changing this pattern.
+        ignoreAssetsPattern = "CLAUDE.md"
+    }
     // kotlinOptions {} is gone under AGP's built-in Kotlin support; jvmTarget now infers
     // from compileOptions.targetCompatibility above (1.8), so no replacement block is needed.
 }
