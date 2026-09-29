@@ -32,7 +32,7 @@ or
 Published on Maven Central — no extra repository needed, just add the dependency:
 
     dependencies {
-      implementation 'io.github.lingarajsankaravelu:katexmathview:1.0.5'
+      implementation 'io.github.lingarajsankaravelu:katexmathview:2.0.0'
     }
     
 ### Attributes supported
