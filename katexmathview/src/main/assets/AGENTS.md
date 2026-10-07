@@ -22,14 +22,14 @@ Last synced: 2026-09-28, after ~6 years vendored at KaTeX 0.10.11 / jQuery 3.4.1
 Only these are loaded by `MathView.kt`'s HTML template — everything else in this
 directory is dead weight and has been deliberately pruned:
 
-| File | Loaded? |
-|---|---|
-| `katex/katex.min.js`, `katex/katex.min.css` | yes |
-| `katex/contrib/auto-render.min.js` | yes |
-| `katex/fonts/*` | yes (via CSS `@font-face`) |
-| `jquery.min.js` | yes |
-| `latex_parser.js` | yes — project-owned, not from KaTeX |
-| `webviewstyle.css`, `themes/style.css` | yes |
+| File                                            | Loaded?                              |
+| ----------------------------------------------- | ------------------------------------ |
+| `katex/katex.min.js`, `katex/katex.min.css` | yes                                  |
+| `katex/contrib/auto-render.min.js`            | yes                                  |
+| `katex/fonts/*`                               | yes (via CSS`@font-face`)          |
+| `jquery.min.js`                               | yes                                  |
+| `latex_parser.js`                             | yes — project-owned, not from KaTeX |
+| `webviewstyle.css`, `themes/style.css`      | yes                                  |
 
 Deliberately **not** vendored (present in upstream `dist/` but never loaded, so don't
 re-add without also adding a `<script>`/`<link>` tag for them): `katex.js`, `katex.mjs`,

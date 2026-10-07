@@ -8,4 +8,12 @@
 /build
 /captures
 .externalNativeBuild
-.claude/settings.local.json
+
+
+.graphify/
+graphify-out/
+.graphify_*.json
+.graphify_python
+
+.claude/
+skills/
