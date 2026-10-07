@@ -1,0 +1,254 @@
+{
+  "Katex/app/build.gradle": {
+    "mtime": 1790601276.4722896,
+    "seen": 1791357211.9638138,
+    "ast_hash": "4a31928008eed06aed8ac491de5f8cea",
+    "semantic_hash": "4a31928008eed06aed8ac491de5f8cea"
+  },
+  "Katex/app/src/androidTest/kotlin/hourglass/github/in/katex/ExampleInstrumentedTest.kt": {
+    "mtime": 1790601276.4729636,
+    "seen": 1791357211.963815,
+    "ast_hash": "6d038c4242fe65fd7b65afc61ac4be59",
+    "semantic_hash": "6d038c4242fe65fd7b65afc61ac4be59"
+  },
+  "Katex/app/src/main/kotlin/hourglass/github/in/katex/DataHelpers.kt": {
+    "mtime": 1790601276.4738266,
+    "seen": 1791357211.963816,
+    "ast_hash": "2ae99e6ac7f034597830bc50c0ff1622",
+    "semantic_hash": "2ae99e6ac7f034597830bc50c0ff1622"
+  },
+  "Katex/app/src/main/kotlin/hourglass/github/in/katex/Helpers.kt": {
+    "mtime": 1790601276.4741066,
+    "seen": 1791357211.963817,
+    "ast_hash": "60e4743d9945a7944543455936a6bccd",
+    "semantic_hash": "60e4743d9945a7944543455936a6bccd"
+  },
+  "Katex/app/src/main/kotlin/hourglass/github/in/katex/activities/MainActivity.kt": {
+    "mtime": 1790601276.4746816,
+    "seen": 1791357211.963817,
+    "ast_hash": "e9a5c7401e5df5147f0e908c77b417f5",
+    "semantic_hash": "e9a5c7401e5df5147f0e908c77b417f5"
+  },
+  "Katex/app/src/main/kotlin/hourglass/github/in/katex/activities/MathViewAdditionAtRuntime.kt": {
+    "mtime": 1790601276.474871,
+    "seen": 1791357211.963817,
+    "ast_hash": "e5c0f2ed4494d90ebdef640d432a8f86",
+    "semantic_hash": "e5c0f2ed4494d90ebdef640d432a8f86"
+  },
+  "Katex/app/src/main/kotlin/hourglass/github/in/katex/activities/MathViewListActivity.kt": {
+    "mtime": 1790601276.4750955,
+    "seen": 1791357211.963818,
+    "ast_hash": "54d931a3631dae3708c37cbb04dbdf5b",
+    "semantic_hash": "54d931a3631dae3708c37cbb04dbdf5b"
+  },
+  "Katex/app/src/main/kotlin/hourglass/github/in/katex/activities/MathviewInLayoutActivity.kt": {
+    "mtime": 1790601276.475269,
+    "seen": 1791357211.963818,
+    "ast_hash": "8b91be329efb1986df1febfe3469a64a",
+    "semantic_hash": "8b91be329efb1986df1febfe3469a64a"
+  },
+  "Katex/app/src/main/kotlin/hourglass/github/in/katex/adapters/MathListAdapter.kt": {
+    "mtime": 1790601276.4754894,
+    "seen": 1791357211.963819,
+    "ast_hash": "4d5f83ebb6207c1b19d9508215357fe0",
+    "semantic_hash": "4d5f83ebb6207c1b19d9508215357fe0"
+  },
+  "Katex/app/src/test/kotlin/hourglass/github/in/katex/ExampleUnitTest.kt": {
+    "mtime": 1790601276.4780884,
+    "seen": 1791357211.963819,
+    "ast_hash": "c0c1febb68e5e6702f43b8a6c7a74101",
+    "semantic_hash": "c0c1febb68e5e6702f43b8a6c7a74101"
+  },
+  "Katex/build.gradle": {
+    "mtime": 1790601276.478404,
+    "seen": 1791357211.963819,
+    "ast_hash": "4c9d297cb92b6676975be8697ba23dde",
+    "semantic_hash": "4c9d297cb92b6676975be8697ba23dde"
+  },
+  "Katex/gradlew": {
+    "mtime": 1790601276.4807756,
+    "seen": 1791357211.96382,
+    "ast_hash": "48fe0bd77a66bbb62c1150926ab1332c",
+    "semantic_hash": "48fe0bd77a66bbb62c1150926ab1332c"
+  },
+  "Katex/katexmathview/build.gradle": {
+    "mtime": 1790601538.325031,
+    "seen": 1791357211.96382,
+    "ast_hash": "7d506a388057d2ec76de942bad3f3d8e",
+    "semantic_hash": "7d506a388057d2ec76de942bad3f3d8e"
+  },
+  "Katex/katexmathview/src/androidTest/kotlin/katex/hourglass/in/mathlib/MathViewEspressoTest.kt": {
+    "mtime": 1790601276.4821634,
+    "seen": 1791357211.96382,
+    "ast_hash": "794dceeaa9a68df0935cf733beeb63b2",
+    "semantic_hash": "794dceeaa9a68df0935cf733beeb63b2"
+  },
+  "Katex/katexmathview/src/androidTest/kotlin/katex/hourglass/in/mathlib/MathViewTestActivity.kt": {
+    "mtime": 1790601276.4823985,
+    "seen": 1791357211.9638212,
+    "ast_hash": "5681a75e2e5ce1d0609f3fb8e28a6c91",
+    "semantic_hash": "5681a75e2e5ce1d0609f3fb8e28a6c91"
+  },
+  "Katex/katexmathview/src/main/assets/jquery.min.js": {
+    "mtime": 1790601406.1037858,
+    "seen": 1791357211.9638212,
+    "ast_hash": "2c872dbe60f4ba70fb85356113d8b35e",
+    "semantic_hash": "2c872dbe60f4ba70fb85356113d8b35e"
+  },
+  "Katex/katexmathview/src/main/assets/katex/contrib/auto-render.min.js": {
+    "mtime": 1790601406.1019564,
+    "seen": 1791357211.9638212,
+    "ast_hash": "2499f8f84f6a72af275029af0206a56b",
+    "semantic_hash": "2499f8f84f6a72af275029af0206a56b"
+  },
+  "Katex/katexmathview/src/main/assets/katex/katex.min.js": {
+    "mtime": 1790601406.098266,
+    "seen": 1791357211.9638221,
+    "ast_hash": "202f7e736ad3762d1cbd026265d632df",
+    "semantic_hash": "202f7e736ad3762d1cbd026265d632df"
+  },
+  "Katex/katexmathview/src/main/assets/latex_parser.js": {
+    "mtime": 1790621545.3797112,
+    "seen": 1791357211.9638221,
+    "ast_hash": "a83dec50bde983a213f5645ae6d29620",
+    "semantic_hash": "a83dec50bde983a213f5645ae6d29620"
+  },
+  "Katex/katexmathview/src/main/kotlin/katex/hourglass/in/mathlib/MathView.kt": {
+    "mtime": 1790601323.7621884,
+    "seen": 1791357211.9638221,
+    "ast_hash": "a45578d21de622e9298855ace0416ef2",
+    "semantic_hash": "a45578d21de622e9298855ace0416ef2"
+  },
+  "Katex/katexmathview/src/test/kotlin/katex/hourglass/in/mathlib/MathViewTest.kt": {
+    "mtime": 1790601276.483943,
+    "seen": 1791357211.963823,
+    "ast_hash": "004017098ce5e85ae6d699be5616adb8",
+    "semantic_hash": "004017098ce5e85ae6d699be5616adb8"
+  },
+  "Katex/settings.gradle": {
+    "mtime": 1790562492.2430387,
+    "seen": 1791357211.963823,
+    "ast_hash": "9324cfc406507f6e462ef7b555a8b445",
+    "semantic_hash": "9324cfc406507f6e462ef7b555a8b445"
+  },
+  "Katex/.github/FUNDING.yml": {
+    "mtime": 1790562492.2237976,
+    "seen": 1791357211.963823,
+    "ast_hash": "5ba962aa312c8d8c7558442a8372e37f",
+    "semantic_hash": "5ba962aa312c8d8c7558442a8372e37f"
+  },
+  "Katex/.github/workflows/build.yml": {
+    "mtime": 1790601276.470982,
+    "seen": 1791357211.963824,
+    "ast_hash": "6eb967f062362d2eb91e85c9f01e094b",
+    "semantic_hash": "6eb967f062362d2eb91e85c9f01e094b"
+  },
+  "Katex/.github/workflows/release.yml": {
+    "mtime": 1790601276.4713087,
+    "seen": 1791357211.963824,
+    "ast_hash": "d902efc098979620f04bf3109ebc4657",
+    "semantic_hash": "d902efc098979620f04bf3109ebc4657"
+  },
+  "Katex/README.md": {
+    "mtime": 1790670930.5984182,
+    "seen": 1791357211.963824,
+    "ast_hash": "a4b98f21d06bdc023c347ad5d2633074",
+    "semantic_hash": "a4b98f21d06bdc023c347ad5d2633074"
+  },
+  "Katex/backlog.md": {
+    "mtime": 1790672233.3121464,
+    "seen": 1791357211.963825,
+    "ast_hash": "09de7bd335ede60d412d092ab4c6d724",
+    "semantic_hash": "09de7bd335ede60d412d092ab4c6d724"
+  },
+  "Katex/katex-asset-upgrade-plan.md": {
+    "mtime": 1790669328.2104948,
+    "seen": 1791357211.963825,
+    "ast_hash": "50119d70fe975a9a433ea32f977db112",
+    "semantic_hash": "50119d70fe975a9a433ea32f977db112"
+  },
+  "Katex/katexmathview/src/main/assets/CLAUDE.md": {
+    "mtime": 1790601524.3419778,
+    "seen": 1791357211.963825,
+    "ast_hash": "077cbea6baf99a4d507f22c8ec64bcb3",
+    "semantic_hash": "077cbea6baf99a4d507f22c8ec64bcb3"
+  },
+  "Katex/maven-central-release-plan.md": {
+    "mtime": 1790582510.243722,
+    "seen": 1791357211.963826,
+    "ast_hash": "53983ac23d685e6bc5bcf08fd6765f9c",
+    "semantic_hash": "53983ac23d685e6bc5bcf08fd6765f9c"
+  },
+  "Katex/plan.md": {
+    "mtime": 1790671562.2364695,
+    "seen": 1791357211.963826,
+    "ast_hash": "b2a82ef57aa63d23c612d8efa10646ac",
+    "semantic_hash": "b2a82ef57aa63d23c612d8efa10646ac"
+  },
+  "Katex/release_pipeline_requirement.md": {
+    "mtime": 1790588162.5859694,
+    "seen": 1791357211.963826,
+    "ast_hash": "c711095bbd690b94f9c701a540f8aab0",
+    "semantic_hash": "c711095bbd690b94f9c701a540f8aab0"
+  },
+  "Katex/app/src/main/res/mipmap-hdpi/ic_launcher.png": {
+    "mtime": 1790562492.2264333,
+    "seen": 1791357211.963827,
+    "ast_hash": "357539403cded61d96161198a0773ffc",
+    "semantic_hash": "357539403cded61d96161198a0773ffc"
+  },
+  "Katex/app/src/main/res/mipmap-hdpi/ic_launcher_round.png": {
+    "mtime": 1790562492.2265134,
+    "seen": 1791357211.963827,
+    "ast_hash": "8dff9a318174c479ae60d50da90e134d",
+    "semantic_hash": "8dff9a318174c479ae60d50da90e134d"
+  },
+  "Katex/app/src/main/res/mipmap-mdpi/ic_launcher.png": {
+    "mtime": 1790562492.2266173,
+    "seen": 1791357211.963827,
+    "ast_hash": "5ff8945dee0f56d079db8ce6691aaaeb",
+    "semantic_hash": "5ff8945dee0f56d079db8ce6691aaaeb"
+  },
+  "Katex/app/src/main/res/mipmap-mdpi/ic_launcher_round.png": {
+    "mtime": 1790562492.226689,
+    "seen": 1791357211.963828,
+    "ast_hash": "88561fb7750cb810277d031f0c47c610",
+    "semantic_hash": "88561fb7750cb810277d031f0c47c610"
+  },
+  "Katex/app/src/main/res/mipmap-xhdpi/ic_launcher.png": {
+    "mtime": 1790562492.226827,
+    "seen": 1791357211.963828,
+    "ast_hash": "93fd2eadf162fd41695cab262540184f",
+    "semantic_hash": "93fd2eadf162fd41695cab262540184f"
+  },
+  "Katex/app/src/main/res/mipmap-xhdpi/ic_launcher_round.png": {
+    "mtime": 1790562492.2269156,
+    "seen": 1791357211.963828,
+    "ast_hash": "f0977a76592231d78d0d71c46368cc3d",
+    "semantic_hash": "f0977a76592231d78d0d71c46368cc3d"
+  },
+  "Katex/app/src/main/res/mipmap-xxhdpi/ic_launcher.png": {
+    "mtime": 1790562492.2270682,
+    "seen": 1791357211.963829,
+    "ast_hash": "40d69d20dd057b4a331d03f2f3f2667e",
+    "semantic_hash": "40d69d20dd057b4a331d03f2f3f2667e"
+  },
+  "Katex/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.png": {
+    "mtime": 1790562492.2271545,
+    "seen": 1791357211.963829,
+    "ast_hash": "65b3590554d0bc9f447017b0e1a1145c",
+    "semantic_hash": "65b3590554d0bc9f447017b0e1a1145c"
+  },
+  "Katex/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png": {
+    "mtime": 1790562492.227304,
+    "seen": 1791357211.963829,
+    "ast_hash": "4ad08251ddecfdd6e2a2c53e79b8d8de",
+    "semantic_hash": "4ad08251ddecfdd6e2a2c53e79b8d8de"
+  },
+  "Katex/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png": {
+    "mtime": 1790562492.2274883,
+    "seen": 1791357211.96383,
+    "ast_hash": "508ac9fee520930820844e0b7dcd748f",
+    "semantic_hash": "508ac9fee520930820844e0b7dcd748f"
+  }
+}
