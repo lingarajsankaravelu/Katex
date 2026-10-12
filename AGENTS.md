@@ -21,9 +21,9 @@ Katex/
 └── .github/workflows/          — build.yml (CI), release.yml (Maven Central publish)
 ```
 
-## graphify
+## Graphify
 
-This project has a knowledge graph at graphify-out/ with god nodes, community structure, and cross-file relationships.
+This project has a knowledge graph at graphify-out/ with god nodes, community structure and cross-file relationships.
 
 Rules:
 - For codebase questions, first run `graphify query "<question>"` when graphify-out/graph.json exists. Use `graphify path "<A>" "<B>"` for relationships and `graphify explain "<concept>"` for focused concepts. These return a scoped subgraph, usually much smaller than GRAPH_REPORT.md or raw grep output.

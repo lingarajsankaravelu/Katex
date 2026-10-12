@@ -1,8 +1,8 @@
 # Vendored assets: KaTeX + jQuery + project glue
 
-This directory is bundled into the `katexmathview` AAR and loaded straight into a
+This directory is bundled into the `katexmathview` AAR and into a
 `WebView` (see `MathView.kt`'s `getOfflineKatexConfig()`, the only place that references
-these files). It is not fetched at runtime — it ships with the library.
+these files).
 
 **This file is NOT shipped.** `katexmathview/build.gradle` excludes it from asset
 packaging via `android.androidResources.ignoreAssetsPattern` (verified by inspecting a
@@ -96,9 +96,9 @@ this file doesn't leak into a release artifact:
 
 ```
 ./gradlew :katexmathview:assembleRelease
-unzip -l katexmathview/build/outputs/aar/katexmathview-release.aar | grep -i claude.md
+unzip -l katexmathview/build/outputs/aar/katexmathview-release.aar | grep -i AGENTS.md
 ```
 
-The `grep` should find nothing. If it finds `CLAUDE.md`, fix the exclusion before
+The `grep` should find nothing. If it finds `AGENTS.md`, fix the exclusion before
 publishing — don't just delete this file as a workaround, since the next sync will
 recreate the same risk.
