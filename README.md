@@ -78,6 +78,6 @@ Sample code is available under the app module, in this same repo
   
 # License
 
-    Licensed under [MIT](https://opensource.org/license/MIT)
+Licensed under [MIT](https://opensource.org/license/MIT)
 
 
