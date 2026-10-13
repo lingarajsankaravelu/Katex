@@ -2,6 +2,7 @@ package katex.hourglass.`in`.mathlib
 
 import android.graphics.Color
 import android.view.MotionEvent
+import org.junit.Assert.assertEquals
 import org.junit.Assert.assertFalse
 import org.junit.Assert.assertNull
 import org.junit.Assert.assertTrue
@@ -33,6 +34,65 @@ class MathViewTest {
     mathView.setDisplayText("x^2 + y^2 = z^2")
 
     assertTrue(shadowOf(mathView).lastLoadDataWithBaseURL.data.contains("x^2 + y^2 = z^2"))
+  }
+
+  @Test
+  fun `getDisplayText returns null before any text is set`() {
+    val mathView = MathView(context)
+
+    assertNull(mathView.getDisplayText())
+  }
+
+  @Test
+  fun `getDisplayText returns the formula passed to setDisplayText verbatim`() {
+    val mathView = MathView(context)
+    val formula = "\$\$\\sqrt{x^2 + y^2}\$\$"
+
+    mathView.setDisplayText(formula)
+
+    assertEquals(formula, mathView.getDisplayText())
+  }
+
+  @Test
+  fun `getDisplayText reflects the latest setDisplayText call`() {
+    val mathView = MathView(context)
+
+    mathView.setDisplayText("a+b")
+    mathView.setDisplayText("c+d")
+
+    assertEquals("c+d", mathView.getDisplayText())
+  }
+
+  @Test
+  fun `getDisplayText returns null after text is cleared`() {
+    val mathView = MathView(context)
+    mathView.setDisplayText("a+b")
+
+    mathView.setDisplayText(null)
+
+    assertNull(mathView.getDisplayText())
+  }
+
+  @Test
+  fun `getDisplayText returns the text supplied through the setText XML attribute`() {
+    val attrs = Robolectric.buildAttributeSet()
+      .addAttribute(R.attr.setText, "a+b")
+      .build()
+
+    val mathView = MathView(context, attrs)
+
+    assertEquals("a+b", mathView.getDisplayText())
+  }
+
+  @Test
+  fun `getDisplayText is unaffected by text size and color changes`() {
+    val mathView = MathView(context)
+    mathView.setDisplayText("x^2")
+
+    mathView.setTextSize(32)
+    mathView.setTextColor(Color.RED)
+
+    assertEquals("x^2", mathView.getDisplayText())
   }
 
   @Test
