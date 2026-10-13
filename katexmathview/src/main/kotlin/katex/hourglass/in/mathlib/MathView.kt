@@ -85,6 +85,13 @@ class MathView : WebView {
     loadData()
   }
 
+  /**
+   * Returns the formula text currently held by this view exactly as it was supplied through
+   * [setDisplayText] or the `setText` XML attribute, or `null` when no text has been set.
+   * This is the raw LaTeX input, not the rendered output of the WebView.
+   */
+  fun getDisplayText(): String? = displayText
+
   private fun getOfflineKatexConfig(formulaText: String): String {
     return """
       <!DOCTYPE html>
